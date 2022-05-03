@@ -103,19 +103,7 @@ struct SettingVeiw: View {
                 }
                 Spacer()
                 
-                // 버튼이 됐다 안됐다 말썽
                 NavigationLink(destination: WriteView(isModeOn: isTimeModeOn, limiteTime: 0)){
-//                    Button(action: {
-//                        if (selectedMode == 1) {isTimeModeOn = true}
-//                        else {isTimeModeOn = false}
-//                    }, label: {
-//                        Text("글쓰기 시작")
-//                            .font(.system(size: 24))
-//                            .fontWeight(.semibold)
-//                            .foregroundColor(Color.white)
-//
-                    //
-                    //                    })
                     Text("글쓰기 시작")
                         .font(.system(size: 24))
                         .fontWeight(.semibold)

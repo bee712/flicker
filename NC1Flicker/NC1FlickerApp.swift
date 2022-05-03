@@ -11,7 +11,7 @@ import SwiftUI
 struct NC1FlickerApp: App {
     var body: some Scene {
         WindowGroup {
-            SettingVeiw()
+            WriteView(isModeOn: true, limiteTime: 60)
         }
     }
 }

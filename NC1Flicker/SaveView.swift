@@ -8,35 +8,38 @@
 import SwiftUI
 
 struct SaveView: View {
-    var savedWriting : String
-    @State var writeField = "글쓰기를 시작해보세요."
+    @State var savedWriting : String
+    @State var totalLetter = 0
+    
     
     var body: some View {
         NavigationView{
             VStack{
-                HStack{     // 글쓰기 뷰 상단
-                    Text("복사")
-                        .font(.system(size: 16))
-                        .foregroundColor(.appMainColor)
+                HStack{
+                    Text("  ")
                         
                     Spacer()
-                    Text("공미포 0,000자")
+                    Text("공미포 \(totalLetter)자")
                         .font(.system(size: 10))
                         .foregroundColor(Color("textSubColor"))
                     Spacer()
                     Button(action: {
                         
                     }){
-                        Text("수정")
+                        Text("복사")
                             .font(.system(size: 16))
                             .foregroundColor(.appMainColor)
                     }
                 }.frame(width: 340)
                 
-                TextEditor(text: $writeField)
+                TextEditor(text: $savedWriting)
                     .frame(width: 340, height: 632)
+                    .onChange(of: savedWriting, perform: { value in
+                        let crruntText = savedWriting.components(separatedBy: [" ", "\n"]).joined()
+                        totalLetter = crruntText.count
+                        
+                    })
                 
-                // TextField
                 HStack{     // 뷰 하단 네비게이션
                     NavigationLink(destination: SettingVeiw(), label: {
                         Text("새 글쓰기+")
@@ -57,6 +60,6 @@ struct SaveView: View {
 
 struct SaveView_Previews: PreviewProvider {
     static var previews: some View {
-        SaveView(savedWriting: "저장된 글 입니다.")
+        SaveView(savedWriting: "저장된 글")
     }
 }
