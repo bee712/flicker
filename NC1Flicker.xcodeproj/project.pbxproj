@@ -13,6 +13,7 @@
 		D4957172281EBCED0006773A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4957171281EBCED0006773A /* Preview Assets.xcassets */; };
 		D4957179281EC4120006773A /* SettingVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4957178281EC4110006773A /* SettingVeiw.swift */; };
 		D4B79C8D282016850022F75F /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B79C8C282016850022F75F /* WriteView.swift */; };
+		D4B79C8F28210D420022F75F /* SaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B79C8E28210D420022F75F /* SaveView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		D4957171281EBCED0006773A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D4957178281EC4110006773A /* SettingVeiw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVeiw.swift; sourceTree = "<group>"; };
 		D4B79C8C282016850022F75F /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WriteView.swift; path = ../WriteView.swift; sourceTree = "<group>"; };
+		D4B79C8E28210D420022F75F /* SaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				D495716C281EBCEC0006773A /* ContentView.swift */,
 				D4957178281EC4110006773A /* SettingVeiw.swift */,
 				D4B79C8C282016850022F75F /* WriteView.swift */,
+				D4B79C8E28210D420022F75F /* SaveView.swift */,
 				D495716E281EBCED0006773A /* Assets.xcassets */,
 				D4957170281EBCED0006773A /* Preview Content */,
 			);
@@ -145,6 +148,7 @@
 			files = (
 				D4B79C8D282016850022F75F /* WriteView.swift in Sources */,
 				D4957179281EC4120006773A /* SettingVeiw.swift in Sources */,
+				D4B79C8F28210D420022F75F /* SaveView.swift in Sources */,
 				D495716D281EBCEC0006773A /* ContentView.swift in Sources */,
 				D495716B281EBCEC0006773A /* NC1FlickerApp.swift in Sources */,
 			);
