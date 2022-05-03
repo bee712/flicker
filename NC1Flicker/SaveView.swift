@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SaveView: View {
     @State var savedWriting : String
-    @State var totalLetter = 0
+    @State var totalLetter: Int = 0
+    @State var alertShow: Bool = false
     
     
     var body: some View {
@@ -24,7 +25,8 @@ struct SaveView: View {
                         .foregroundColor(Color("textSubColor"))
                     Spacer()
                     Button(action: {
-                        
+                        let pasteboard = UIPasteboard.general
+                        pasteboard.string = savedWriting
                     }){
                         Text("복사")
                             .font(.system(size: 16))
