@@ -10,7 +10,7 @@ import SwiftUI
 struct SaveView: View {
     @State var savedWriting : String
     @State var totalLetter: Int = 0
-    @State var alertShow: Bool = false
+    @State var showAlert: Bool = false
     
     
     var body: some View {
@@ -27,10 +27,14 @@ struct SaveView: View {
                     Button(action: {
                         let pasteboard = UIPasteboard.general
                         pasteboard.string = savedWriting
+                        showAlert = true
                     }){
                         Text("복사")
                             .font(.system(size: 16))
                             .foregroundColor(.appMainColor)
+                    }
+                    .alert(isPresented: $showAlert){
+                        Alert(title: Text("타이틀 뭐라쓰지~~"), message: Text("클립보드로 복사되었습니다."))
                     }
                 }.frame(width: 340)
                 
