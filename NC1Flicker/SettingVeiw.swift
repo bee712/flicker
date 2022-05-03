@@ -12,6 +12,7 @@ struct SettingVeiw: View {
     let modeNames = ["ON", "OFF"]
     @State var selectedMode = 0
     @State var timeLimitMin = 0
+    @State var isTimeModeOn = true
     
     init() {
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(Color.appMainColor)
@@ -23,6 +24,7 @@ struct SettingVeiw: View {
     var body: some View {
         NavigationView{
             VStack{
+                Spacer()
                 VStack{
                     Text("시간 제한 기능을 켤까요?")
                         .font(.system(size: 30))
@@ -33,6 +35,7 @@ struct SettingVeiw: View {
                         ForEach(0..<modeNames.count) { index  in
                             Text(modeNames[index])
                         }
+                        
                     }
                     .pickerStyle(SegmentedPickerStyle())
                     .frame(width: 150, height: 52)
@@ -99,18 +102,24 @@ struct SettingVeiw: View {
                     
                 }
                 Spacer()
-                VStack{     // 글쓰기 시작 버튼
-                    NavigationLink(destination: EmptyView()){
-                        Button(action: {
-                            print("go")
-                        }, label: {
-                            Text("글쓰기 시작")
-                                .font(.system(size: 24))
-                                .fontWeight(.semibold)
-                                .foregroundColor(Color.white)
-                            
-                            
-                        })
+                
+                // 버튼이 됐다 안됐다 말썽
+                NavigationLink(destination: WriteView(isModeOn: isTimeModeOn, limiteTime: 0)){
+//                    Button(action: {
+//                        if (selectedMode == 1) {isTimeModeOn = true}
+//                        else {isTimeModeOn = false}
+//                    }, label: {
+//                        Text("글쓰기 시작")
+//                            .font(.system(size: 24))
+//                            .fontWeight(.semibold)
+//                            .foregroundColor(Color.white)
+//
+                    //
+                    //                    })
+                    Text("글쓰기 시작")
+                        .font(.system(size: 24))
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color.white)
                         .frame(width: 212, height: 47)
                         .background(Color.appMainColor)
                         .cornerRadius(24)
@@ -120,19 +129,16 @@ struct SettingVeiw: View {
                                 .shadow(color: Color.buttonInnerShadow1, radius: 2, x: 3, y: 3)
                                 .clipShape(RoundedRectangle(cornerRadius: 20))
                                 .shadow(color: Color.buttonInnerShadow2, radius: 2, x: -3, y: -3)
-                                .clipShape(RoundedRectangle(cornerRadius: 20))
-                        )
-                    }
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                    )
                 }
                 .padding(.bottom, 30)
                 
                 
-                
-                
-                
-                
-            }
+            }.navigationBarTitle("", displayMode: .automatic)
+                .navigationBarHidden(true)
         }
+            .navigationBarHidden(true)
         
         
     }
