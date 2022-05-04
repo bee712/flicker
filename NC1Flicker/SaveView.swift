@@ -36,10 +36,12 @@ struct SaveView: View {
                     .alert(isPresented: $showAlert){
                         Alert(title: Text("우효~~ 복사됐다구~~"), message: Text("클립보드로 복사되었습니다."))
                     }
-                }.frame(width: 340)
+                }
+                .frame(width: 340)
+                .padding(.top, 15)
                 
                 TextEditor(text: $savedWriting)
-                    .padding([.leading, .trailing, .top])
+                    .frame(width: 340)
                     .onChange(of: savedWriting, perform: { value in
                         let crruntText = savedWriting.components(separatedBy: [" ", "\n"]).joined()
                         totalLetter = crruntText.count
@@ -58,6 +60,8 @@ struct SaveView: View {
                     
                 }
                 .frame(width: 340)
+                .padding(.bottom, 10)
+                
             }.navigationBarTitle("", displayMode: .automatic)
                 .navigationBarHidden(true)
         }.navigationBarHidden(true)

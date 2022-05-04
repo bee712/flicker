@@ -44,7 +44,6 @@ struct SettingVeiw: View {
                     
                 }
                 .padding(.bottom, 90)
-                .padding(.top, 50)
                 
                 VStack{
                     Text("저장 버튼을\n몇 분마다 띄울까요?")

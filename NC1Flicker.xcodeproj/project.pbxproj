@@ -47,7 +47,6 @@
 		D495715E281EBCEC0006773A = {
 			isa = PBXGroup;
 			children = (
-				D4B79C94282122980022F75F /* UIResponder+Current.swift */,
 				D4957169281EBCEC0006773A /* NC1Flicker */,
 				D4957168281EBCEC0006773A /* Products */,
 			);
@@ -71,6 +70,7 @@
 				D4B79C8E28210D420022F75F /* SaveView.swift */,
 				D4B79C902821200D0022F75F /* KeyboardAdaptive.swift */,
 				D4B79C92282121580022F75F /* KeyvoardHeightPublisher.swift */,
+				D4B79C94282122980022F75F /* UIResponder+Current.swift */,
 				D495716E281EBCED0006773A /* Assets.xcassets */,
 				D4957170281EBCED0006773A /* Preview Content */,
 			);

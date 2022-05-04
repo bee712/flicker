@@ -39,10 +39,12 @@ struct WriteView: View {
                             .font(.system(size: 16))
                             .foregroundColor(Color("textSubColor"))
                     }
-                }.frame(width: 340)
+                }
+                .frame(width: 340)
+                .padding(.top, 20)
                 
                 TextEditor(text: $writeField)
-                    .padding([.leading, .trailing, .top])
+                    .frame(width: 340)
                     .onChange(of: writeField, perform: { value in
                         let crruntText = writeField.components(separatedBy: [" ", "\n"]).joined()
                         
@@ -67,6 +69,7 @@ struct WriteView: View {
                     
                 }
                 .frame(width: 340)
+                .padding(.bottom, 10)
             }
             .navigationBarTitle("", displayMode: .automatic)
             .navigationBarHidden(true)
