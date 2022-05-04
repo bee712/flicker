@@ -16,6 +16,19 @@ struct SaveView: View {
     var body: some View {
         NavigationView{
             VStack{
+                
+                TopToolBar(savedWriting: savedWriting, isSaveViewShow: false)
+                
+                TextEditor(text: $savedWriting)
+                    .frame(width: 340)
+                    .onChange(of: savedWriting, perform: { value in
+                        let crruntText = savedWriting.components(separatedBy: [" ", "\n"]).joined()
+                        totalLetter = crruntText.count
+                        
+                    })
+                
+                
+                
                 HStack{
                     Text("  ")
                         
@@ -36,28 +49,6 @@ struct SaveView: View {
                     .alert(isPresented: $showAlert){
                         Alert(title: Text("우효~~ 복사됐다구~~"), message: Text("클립보드로 복사되었습니다."))
                     }
-                }
-                .frame(width: 340)
-                .padding(.top, 15)
-                
-                TextEditor(text: $savedWriting)
-                    .frame(width: 340)
-                    .onChange(of: savedWriting, perform: { value in
-                        let crruntText = savedWriting.components(separatedBy: [" ", "\n"]).joined()
-                        totalLetter = crruntText.count
-                        
-                    })
-                
-                HStack{     // 뷰 하단 네비게이션
-                    NavigationLink(destination: SettingVeiw(), label: {
-                        Text("새 글쓰기+")
-                            .font(.system(size: 18))
-                            .fontWeight(.medium)
-                            .foregroundColor(Color.appMainColor)
-                    })
-                    Spacer()
-                    
-                    
                 }
                 .frame(width: 340)
                 .padding(.bottom, 10)
