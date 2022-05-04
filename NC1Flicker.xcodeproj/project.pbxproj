@@ -14,6 +14,7 @@
 		D4957179281EC4120006773A /* SettingVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4957178281EC4110006773A /* SettingVeiw.swift */; };
 		D4B79C8D282016850022F75F /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B79C8C282016850022F75F /* WriteView.swift */; };
 		D4B79C8F28210D420022F75F /* SaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B79C8E28210D420022F75F /* SaveView.swift */; };
+		D4B79C9728225EA00022F75F /* TopToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B79C9628225EA00022F75F /* TopToolBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,8 +24,9 @@
 		D495716E281EBCED0006773A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4957171281EBCED0006773A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D4957178281EC4110006773A /* SettingVeiw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVeiw.swift; sourceTree = "<group>"; };
-		D4B79C8C282016850022F75F /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WriteView.swift; path = ../WriteView.swift; sourceTree = "<group>"; };
+		D4B79C8C282016850022F75F /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
 		D4B79C8E28210D420022F75F /* SaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveView.swift; sourceTree = "<group>"; };
+		D4B79C9628225EA00022F75F /* TopToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopToolBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +61,8 @@
 			children = (
 				D495716A281EBCEC0006773A /* NC1FlickerApp.swift */,
 				D495716C281EBCEC0006773A /* ContentView.swift */,
-				D4957178281EC4110006773A /* SettingVeiw.swift */,
-				D4B79C8C282016850022F75F /* WriteView.swift */,
-				D4B79C8E28210D420022F75F /* SaveView.swift */,
+				D4B79C9828225EE30022F75F /* MainViews */,
+				D4B79C9928225EF90022F75F /* SubViews */,
 				D495716E281EBCED0006773A /* Assets.xcassets */,
 				D4957170281EBCED0006773A /* Preview Content */,
 			);
@@ -74,6 +75,24 @@
 				D4957171281EBCED0006773A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D4B79C9828225EE30022F75F /* MainViews */ = {
+			isa = PBXGroup;
+			children = (
+				D4957178281EC4110006773A /* SettingVeiw.swift */,
+				D4B79C8C282016850022F75F /* WriteView.swift */,
+				D4B79C8E28210D420022F75F /* SaveView.swift */,
+			);
+			path = MainViews;
+			sourceTree = "<group>";
+		};
+		D4B79C9928225EF90022F75F /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				D4B79C9628225EA00022F75F /* TopToolBar.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +170,7 @@
 				D4B79C8F28210D420022F75F /* SaveView.swift in Sources */,
 				D495716D281EBCEC0006773A /* ContentView.swift in Sources */,
 				D495716B281EBCEC0006773A /* NC1FlickerApp.swift in Sources */,
+				D4B79C9728225EA00022F75F /* TopToolBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
