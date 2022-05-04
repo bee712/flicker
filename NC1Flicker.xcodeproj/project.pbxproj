@@ -14,9 +14,6 @@
 		D4957179281EC4120006773A /* SettingVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4957178281EC4110006773A /* SettingVeiw.swift */; };
 		D4B79C8D282016850022F75F /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B79C8C282016850022F75F /* WriteView.swift */; };
 		D4B79C8F28210D420022F75F /* SaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B79C8E28210D420022F75F /* SaveView.swift */; };
-		D4B79C912821200D0022F75F /* KeyboardAdaptive.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B79C902821200D0022F75F /* KeyboardAdaptive.swift */; };
-		D4B79C93282121580022F75F /* KeyvoardHeightPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B79C92282121580022F75F /* KeyvoardHeightPublisher.swift */; };
-		D4B79C95282122980022F75F /* UIResponder+Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B79C94282122980022F75F /* UIResponder+Current.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,9 +25,6 @@
 		D4957178281EC4110006773A /* SettingVeiw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVeiw.swift; sourceTree = "<group>"; };
 		D4B79C8C282016850022F75F /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WriteView.swift; path = ../WriteView.swift; sourceTree = "<group>"; };
 		D4B79C8E28210D420022F75F /* SaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveView.swift; sourceTree = "<group>"; };
-		D4B79C902821200D0022F75F /* KeyboardAdaptive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAdaptive.swift; sourceTree = "<group>"; };
-		D4B79C92282121580022F75F /* KeyvoardHeightPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyvoardHeightPublisher.swift; sourceTree = "<group>"; };
-		D4B79C94282122980022F75F /* UIResponder+Current.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Current.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +62,6 @@
 				D4957178281EC4110006773A /* SettingVeiw.swift */,
 				D4B79C8C282016850022F75F /* WriteView.swift */,
 				D4B79C8E28210D420022F75F /* SaveView.swift */,
-				D4B79C902821200D0022F75F /* KeyboardAdaptive.swift */,
-				D4B79C92282121580022F75F /* KeyvoardHeightPublisher.swift */,
-				D4B79C94282122980022F75F /* UIResponder+Current.swift */,
 				D495716E281EBCED0006773A /* Assets.xcassets */,
 				D4957170281EBCED0006773A /* Preview Content */,
 			);
@@ -157,9 +148,6 @@
 			files = (
 				D4B79C8D282016850022F75F /* WriteView.swift in Sources */,
 				D4957179281EC4120006773A /* SettingVeiw.swift in Sources */,
-				D4B79C95282122980022F75F /* UIResponder+Current.swift in Sources */,
-				D4B79C912821200D0022F75F /* KeyboardAdaptive.swift in Sources */,
-				D4B79C93282121580022F75F /* KeyvoardHeightPublisher.swift in Sources */,
 				D4B79C8F28210D420022F75F /* SaveView.swift in Sources */,
 				D495716D281EBCEC0006773A /* ContentView.swift in Sources */,
 				D495716B281EBCEC0006773A /* NC1FlickerApp.swift in Sources */,
@@ -291,6 +279,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NC1Flicker/Preview Content\"";
+				DEVELOPMENT_TEAM = 9C6L2Z2R74;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -319,6 +308,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NC1Flicker/Preview Content\"";
+				DEVELOPMENT_TEAM = 9C6L2Z2R74;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
