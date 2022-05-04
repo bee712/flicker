@@ -21,12 +21,7 @@ struct WriteView: View {
             VStack{
                 TopToolBar(savedWriting: savedWriting, isSaveViewShow: true)
                 
-                TextEditor(text: $writeField)
-                    .frame(width: 340)
-                    .onChange(of: writeField, perform: { value in
-                        let crruntText = writeField.components(separatedBy: [" ", "\n"]).joined()
-                        totalLetter = crruntText.count
-                    })
+                TextEditorView(writeField: self.$writeField, totalLetter: self.$totalLetter)
                 
                 BottomToolBar(savedWriting: self.$savedWriting, writeField: self.$writeField, totalLetter: self.$totalLetter)
                 
@@ -38,7 +33,6 @@ struct WriteView: View {
         
     }
 }
-
 
 
 struct WriteView_Previews: PreviewProvider {

@@ -19,15 +19,7 @@ struct SaveView: View {
                 
                 TopToolBar(savedWriting: savedWriting, isSaveViewShow: false)
                 
-                TextEditor(text: $savedWriting)
-                    .frame(width: 340)
-                    .onChange(of: savedWriting, perform: { value in
-                        let crruntText = savedWriting.components(separatedBy: [" ", "\n"]).joined()
-                        totalLetter = crruntText.count
-                        
-                    })
-                
-                
+                TextEditorView(writeField: self.$savedWriting, totalLetter: self.$totalLetter)
                 
                 HStack{
                     Text("  ")
