@@ -42,7 +42,7 @@ struct WriteView: View {
                 }.frame(width: 340)
                 
                 TextEditor(text: $writeField)
-                    .frame(width: 340, height: 632)
+                    .padding([.leading, .trailing, .top])
                     .onChange(of: writeField, perform: { value in
                         let crruntText = writeField.components(separatedBy: [" ", "\n"]).joined()
                         

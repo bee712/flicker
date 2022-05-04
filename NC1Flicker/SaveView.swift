@@ -34,12 +34,12 @@ struct SaveView: View {
                             .foregroundColor(.appMainColor)
                     }
                     .alert(isPresented: $showAlert){
-                        Alert(title: Text("타이틀 뭐라쓰지~~"), message: Text("클립보드로 복사되었습니다."))
+                        Alert(title: Text("우효~~ 복사됐다구~~"), message: Text("클립보드로 복사되었습니다."))
                     }
                 }.frame(width: 340)
                 
                 TextEditor(text: $savedWriting)
-                    .frame(width: 340, height: 632)
+                    .padding([.leading, .trailing, .top])
                     .onChange(of: savedWriting, perform: { value in
                         let crruntText = savedWriting.components(separatedBy: [" ", "\n"]).joined()
                         totalLetter = crruntText.count
