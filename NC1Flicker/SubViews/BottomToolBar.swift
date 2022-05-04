@@ -11,10 +11,13 @@ struct BottomToolBar: View {
     @Binding var savedWriting : String
     @Binding var writeField : String
     @Binding var totalLetter : Int
+    @State private var currentSec : Int = 10
+    
+    @ObservedObject var myTimer = MyTimer()
     
     var body: some View {
         HStack{
-            Text("10")
+            Text("\(self.myTimer.value)")
                 .font(.system(size: 16))
                 .foregroundColor(.white)
                 .frame(width: 33, height: 33)

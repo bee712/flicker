@@ -6,15 +6,18 @@
 //
 
 import SwiftUI
-
-struct Timer: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct Timer_Previews: PreviewProvider {
-    static var previews: some View {
-        Timer()
+import Combine
+ 
+class MyTimer: ObservableObject {
+    @Published var value: Int = 10
+    
+    init() {
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            self.value -= 1
+            if (self.value == -1){
+                self.value = 10
+            }
+            
+        }
     }
 }
