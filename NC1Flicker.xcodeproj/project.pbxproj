@@ -16,6 +16,7 @@
 		D4B79C9728225EA00022F75F /* TopToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B79C9628225EA00022F75F /* TopToolBar.swift */; };
 		D4B79C9B2822606A0022F75F /* BottomToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B79C9A2822606A0022F75F /* BottomToolBar.swift */; };
 		D4B79C9D282264DD0022F75F /* TextEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B79C9C282264DD0022F75F /* TextEditorView.swift */; };
+		D4B79CA0282268C50022F75F /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B79C9F282268C50022F75F /* Timer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		D4B79C9628225EA00022F75F /* TopToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopToolBar.swift; sourceTree = "<group>"; };
 		D4B79C9A2822606A0022F75F /* BottomToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomToolBar.swift; sourceTree = "<group>"; };
 		D4B79C9C282264DD0022F75F /* TextEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorView.swift; sourceTree = "<group>"; };
+		D4B79C9F282268C50022F75F /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				D495716A281EBCEC0006773A /* NC1FlickerApp.swift */,
 				D4B79C9828225EE30022F75F /* MainViews */,
 				D4B79C9928225EF90022F75F /* SubViews */,
+				D4B79C9E282268A30022F75F /* Classes */,
 				D495716E281EBCED0006773A /* Assets.xcassets */,
 				D4957170281EBCED0006773A /* Preview Content */,
 			);
@@ -96,6 +99,14 @@
 				D4B79C9C282264DD0022F75F /* TextEditorView.swift */,
 			);
 			path = SubViews;
+			sourceTree = "<group>";
+		};
+		D4B79C9E282268A30022F75F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D4B79C9F282268C50022F75F /* Timer.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +186,7 @@
 				D495716B281EBCEC0006773A /* NC1FlickerApp.swift in Sources */,
 				D4B79C9728225EA00022F75F /* TopToolBar.swift in Sources */,
 				D4B79C9D282264DD0022F75F /* TextEditorView.swift in Sources */,
+				D4B79CA0282268C50022F75F /* Timer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
