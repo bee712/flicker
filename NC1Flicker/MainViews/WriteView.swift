@@ -9,12 +9,22 @@ import SwiftUI
 
 struct WriteView: View {
     
-    var isModeOn : Bool
+    var selectedMode : Int
     var limiteTime : Int
     @State private var savedWriting = ""
     @State private var writeField = "글쓰기를 시작해보세요."
     @State private var totalLetter = 0
     @State private var currentSec = 10
+    
+    init(selectedMode : Int, limiteTime : Int){
+        self.selectedMode = selectedMode
+        self.limiteTime = limiteTime
+        if (self.selectedMode==0) {
+            isModeOn = true
+        }else{
+            isModeOn = false
+        }
+    }
     
     
     var body: some View {
@@ -38,6 +48,6 @@ struct WriteView: View {
 
 struct WriteView_Previews: PreviewProvider {
     static var previews: some View {
-        WriteView(isModeOn: true, limiteTime: 180)
+        WriteView(selectedMode: 1, limiteTime: 30)
     }
 }

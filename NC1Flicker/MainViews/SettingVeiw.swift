@@ -109,8 +109,8 @@ struct SettingVeiw: View {
                     
                 }
                 Spacer()
-                
-                NavigationLink(destination: WriteView(isModeOn: isTimeModeOn, limiteTime: Int(timeLimitMin*60))){
+                // limiteTime: Int(timeLimitMin*60)
+                NavigationLink(destination: WriteView(selectedMode: selectedMode, limiteTime: Int(timeLimitMin*60))){
                     Text("글쓰기 시작")
                         .font(.system(size: 24))
                         .fontWeight(.semibold)
