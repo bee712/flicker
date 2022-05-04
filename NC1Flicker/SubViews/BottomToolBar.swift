@@ -11,13 +11,18 @@ struct BottomToolBar: View {
     @Binding var savedWriting : String
     @Binding var writeField : String
     @Binding var totalLetter : Int
-    @State private var currentSec : Int = 10
+    @Binding var time
     
-    @ObservedObject var myTimer = MyTimer()
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         HStack{
-            Text("\(self.myTimer.value)")
+            Text("\(time)")
+                .onReceive(timer){ _ in
+                    if(time>0){
+                        time -= 1
+                    }
+                }
                 .font(.system(size: 16))
                 .foregroundColor(.white)
                 .frame(width: 33, height: 33)
