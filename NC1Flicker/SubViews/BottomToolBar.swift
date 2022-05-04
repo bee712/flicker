@@ -37,14 +37,13 @@ struct BottomToolBar: View {
                     .frame(width: 33, height: 33)
                     .background(Color.appMainColor)
                     .clipShape(Circle())
-            }else{
-                
             }
             
             Spacer()
             Text("공미포 \(totalLetter)자")
                 .font(.system(size: 10))
                 .foregroundColor(Color("textSubColor"))
+            
             Spacer()
             
             Button(action: {

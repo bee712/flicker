@@ -40,7 +40,7 @@ struct SaveView: View {
                             .foregroundColor(.appMainColor)
                     }
                     .alert(isPresented: $showAlert){
-                        Alert(title: Text("우효~~ 복사됐다구~~"), message: Text("클립보드로 복사되었습니다."))
+                        Alert(title: Text("복사 완료"), message: Text("클립보드로 복사되었습니다."))
                     }
                 }
                 .frame(width: 340)
