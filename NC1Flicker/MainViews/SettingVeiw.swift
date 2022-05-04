@@ -7,11 +7,13 @@
 
 import SwiftUI
 
+var isModeOn: Bool = true
+
 struct SettingVeiw: View {
     
     let modeNames = ["ON", "OFF"]
     @State var selectedMode = 0
-    @State var timeLimitMin = 0
+    @State var timeLimitMin = 0.0
     @State var isTimeModeOn = true
     
     init() {
@@ -35,12 +37,18 @@ struct SettingVeiw: View {
                         ForEach(0..<modeNames.count) { index  in
                             Text(modeNames[index])
                         }
-                        
                     }
                     .pickerStyle(SegmentedPickerStyle())
                     .frame(width: 150, height: 52)
                     .scaledToFit()
                     .scaleEffect(CGSize(width: 1.5, height: 1.5))
+                    .onChange(of: selectedMode, perform: { value in
+                        if(selectedMode==0){
+                            isModeOn = true
+                        }else{
+                            isModeOn = false
+                        }
+                    })
                     
                 }
                 .padding(.bottom, 90)
@@ -55,7 +63,7 @@ struct SettingVeiw: View {
                     HStack{
                         // - 버튼
                         Button(action: {
-                            if(timeLimitMin>0){timeLimitMin -= 1}
+                            if(timeLimitMin>0){timeLimitMin -= 0.5}
                         }, label: {
                             Text("-")
                                 .font(.system(size: 36))
@@ -69,7 +77,7 @@ struct SettingVeiw: View {
                         // 제한 시간 표시 버튼
                         Button(action: {
                         }, label: {
-                            Text("\(timeLimitMin)")
+                            Text("\(String(format: "%.1f", timeLimitMin))")
                                 .font(.system(size: 36))
                                 .fontWeight(.semibold)
                                 .frame(width: 80, height: 80)
@@ -86,7 +94,7 @@ struct SettingVeiw: View {
                         }).padding([.leading, .trailing])
                         // + 버튼
                         Button(action: {
-                            timeLimitMin += 1
+                            timeLimitMin += 0.5
                         }, label: {
                             Text("+")
                                 .font(.system(size: 36))
@@ -102,7 +110,7 @@ struct SettingVeiw: View {
                 }
                 Spacer()
                 
-                NavigationLink(destination: WriteView(isModeOn: isTimeModeOn, limiteTime: 0)){
+                NavigationLink(destination: WriteView(isModeOn: isTimeModeOn, limiteTime: Int(timeLimitMin*60))){
                     Text("글쓰기 시작")
                         .font(.system(size: 24))
                         .fontWeight(.semibold)

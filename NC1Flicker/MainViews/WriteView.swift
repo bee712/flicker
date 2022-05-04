@@ -14,6 +14,7 @@ struct WriteView: View {
     @State private var savedWriting = ""
     @State private var writeField = "글쓰기를 시작해보세요."
     @State private var totalLetter = 0
+    @State private var currentSec = 10
     
     
     var body: some View {
@@ -21,9 +22,9 @@ struct WriteView: View {
             VStack{
                 TopToolBar(savedWriting: savedWriting, isSaveViewShow: true)
                 
-                TextEditorView(writeField: self.$writeField, totalLetter: self.$totalLetter)
+                TextEditorView(writeField: self.$writeField, totalLetter: self.$totalLetter, time: $currentSec)
                 
-                BottomToolBar(savedWriting: self.$savedWriting, writeField: self.$writeField, totalLetter: self.$totalLetter)
+                BottomToolBar(savedWriting: self.$savedWriting, writeField: self.$writeField, totalLetter: self.$totalLetter, time: $currentSec, limiteTime: limiteTime)
                 
                 
             }

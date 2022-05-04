@@ -11,6 +11,7 @@ struct SaveView: View {
     @State var savedWriting : String
     @State var totalLetter: Int = 0
     @State var showAlert: Bool = false
+    @State var time = 10
     
     
     var body: some View {
@@ -19,7 +20,7 @@ struct SaveView: View {
                 
                 TopToolBar(savedWriting: savedWriting, isSaveViewShow: false)
                 
-                TextEditorView(writeField: self.$savedWriting, totalLetter: self.$totalLetter)
+                TextEditorView(writeField: self.$savedWriting, totalLetter: self.$totalLetter, time: $time)
                 
                 HStack{
                     Text("  ")

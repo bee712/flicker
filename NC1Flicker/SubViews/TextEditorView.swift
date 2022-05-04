@@ -10,7 +10,7 @@ import SwiftUI
 struct TextEditorView: View {
     @Binding var writeField : String
     @Binding var totalLetter : Int
-    //@Binding var timeSec : Int
+    @Binding var time : Int
     
     var body: some View {
         TextEditor(text: $writeField)
@@ -18,7 +18,7 @@ struct TextEditorView: View {
             .onChange(of: writeField, perform: { value in
                 let crruntText = writeField.components(separatedBy: [" ", "\n"]).joined()
                 totalLetter = crruntText.count
-                //timeSec = 10
+                time = 10
             })
     }
 }

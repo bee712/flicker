@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 @main
 struct NC1FlickerApp: App {
     var body: some Scene {
