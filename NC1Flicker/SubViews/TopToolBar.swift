@@ -29,7 +29,7 @@ struct TopToolBar: View {
             })
         }
         .frame(width: 340)
-        .padding(.top, 20)
+        .padding(.top)
     }
 }
 
