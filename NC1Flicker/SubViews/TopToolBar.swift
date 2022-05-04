@@ -12,13 +12,6 @@ struct TopToolBar: View {
     
     var body: some View {
         HStack{
-            NavigationLink(destination: SettingVeiw(), label: {
-                Text("새 글쓰기+")
-                    .font(.system(size: 18))
-                    .fontWeight(.medium)
-                    .foregroundColor(Color.appMainColor)
-            })
-            Spacer()
             if isSaveViewShow {
                 NavigationLink(destination: SaveView(savedWriting: savedWriting.trimmingCharacters(in: ["\n"])), label: {
                     Text("저장한 글 보기")
@@ -27,7 +20,13 @@ struct TopToolBar: View {
                         .foregroundColor(Color.appMainColor)
                 })
             }
-            
+            Spacer()
+            NavigationLink(destination: SettingVeiw(), label: {
+                Text("새 글쓰기+")
+                    .font(.system(size: 18))
+                    .fontWeight(.medium)
+                    .foregroundColor(Color.appMainColor)
+            })
         }
         .frame(width: 340)
         .padding(.top, 20)
