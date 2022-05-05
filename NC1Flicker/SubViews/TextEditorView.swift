@@ -18,7 +18,9 @@ struct TextEditorView: View {
             .onChange(of: writeField, perform: { value in
                 let crruntText = writeField.components(separatedBy: [" ", "\n"]).joined()
                 totalLetter = crruntText.count
-                time = 10
+                if(writeField != ""){
+                    time = 10
+                }
             })
     }
 }

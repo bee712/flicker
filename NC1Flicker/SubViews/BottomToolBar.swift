@@ -31,6 +31,9 @@ struct BottomToolBar: View {
                         if (timeCount < limiteTime){
                             timeCount += 1
                         }
+                        if(time == 0){
+                            time = 10
+                        }
                     }
                     .font(.system(size: 16))
                     .foregroundColor(.white)
