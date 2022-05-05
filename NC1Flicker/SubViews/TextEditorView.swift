@@ -10,7 +10,7 @@ import SwiftUI
 struct TextEditorView: View {
     @Binding var writeField : String
     @Binding var totalLetter : Int
-    @Binding var time : Int
+    @Binding var currentSec : Int
     
     var body: some View {
         TextEditor(text: $writeField)
@@ -19,7 +19,7 @@ struct TextEditorView: View {
                 let crruntText = writeField.components(separatedBy: [" ", "\n"]).joined()
                 totalLetter = crruntText.count
                 if(writeField != ""){
-                    time = 10
+                    currentSec = 10
                 }
             })
     }

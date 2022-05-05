@@ -14,6 +14,7 @@ struct BottomToolBar: View {
     @Binding var time : Int
     @State private var timeCount = 0
     var limiteTime: Int
+    @State var showAlert = false
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -33,6 +34,7 @@ struct BottomToolBar: View {
                         }
                         if(time == 0){
                             time = 10
+                            showAlert = true
                         }
                     }
                     .font(.system(size: 16))
@@ -41,12 +43,14 @@ struct BottomToolBar: View {
                     .background(Color.appMainColor)
                     .clipShape(Circle())
             }
+//            Alert(Text("test"), isPresented: $test1, actions: {
+//                if (time==0){
+//                    test1 = true
+//                }
+//            })
             
             Spacer()
-            Text("공미포 \(totalLetter)자")
-                .font(.system(size: 10))
-                .foregroundColor(Color("textSubColor"))
-            
+            countNumberOfWriting(totalLetter: totalLetter)
             Spacer()
             
             Button(action: {
@@ -68,7 +72,17 @@ struct BottomToolBar: View {
                 
             }
         }
+        .alert("시간 초과🥲", isPresented: $showAlert, actions: {})
         .frame(width: 340)
         .padding(.bottom, 10)
+        
+    }
+}
+struct countNumberOfWriting : View {
+    var totalLetter: Int
+    var body: some View {
+        Text("공미포 \(totalLetter)자")
+            .font(.system(size: 10))
+            .foregroundColor(.textSubColor)
     }
 }

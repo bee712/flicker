@@ -32,7 +32,7 @@ struct WriteView: View {
             VStack{
                 TopToolBar(savedWriting: savedWriting, isSaveViewShow: true)
                 
-                TextEditorView(writeField: self.$writeField, totalLetter: self.$totalLetter, time: $currentSec)
+                TextEditorView(writeField: self.$writeField, totalLetter: self.$totalLetter, currentSec: $currentSec)
                 
                 BottomToolBar(savedWriting: self.$savedWriting, writeField: self.$writeField, totalLetter: self.$totalLetter, time: $currentSec, limiteTime: limiteTime)
                 

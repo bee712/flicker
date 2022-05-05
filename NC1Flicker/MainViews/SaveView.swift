@@ -10,8 +10,9 @@ import SwiftUI
 struct SaveView: View {
     @State var savedWriting : String
     @State var totalLetter: Int = 0
-    @State var showAlert: Bool = false
     @State var time = 10
+    @State var showAlert: Bool = false
+    let alertInfo = ["복사", "복사 완료", "클립보드로 복사되었습니다."]
     
     
     var body: some View {
@@ -20,7 +21,7 @@ struct SaveView: View {
                 
                 TopToolBar(savedWriting: savedWriting, isSaveViewShow: false)
                 
-                TextEditorView(writeField: self.$savedWriting, totalLetter: self.$totalLetter, time: $time)
+                TextEditorView(writeField: self.$savedWriting, totalLetter: self.$totalLetter, currentSec: $time)
                 
                 HStack{
                     Text("  ")
@@ -35,12 +36,12 @@ struct SaveView: View {
                         pasteboard.string = savedWriting
                         showAlert = true
                     }){
-                        Text("복사")
+                        Text(alertInfo[0])
                             .font(.system(size: 16))
                             .foregroundColor(.appMainColor)
                     }
                     .alert(isPresented: $showAlert){
-                        Alert(title: Text("복사 완료"), message: Text("클립보드로 복사되었습니다."))
+                        Alert(title: Text(alertInfo[1]), message: Text(alertInfo[2]))
                     }
                 }
                 .frame(width: 340)
