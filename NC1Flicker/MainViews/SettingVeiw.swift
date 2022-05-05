@@ -29,9 +29,8 @@ struct SettingVeiw: View {
                 Spacer()
                 VStack{
                     Text("시간 제한 기능을 켤까요?")
-                        .font(.system(size: 30))
                         .fontWeight(.semibold)
-                        .foregroundColor(Color.textMainColor)
+                        .modifier(TextModifier(customSize: 30))
                     
                     Picker("OnOffPicker", selection: $selectedMode) {
                         ForEach(0..<modeNames.count) { index  in
@@ -55,9 +54,8 @@ struct SettingVeiw: View {
                 
                 VStack{
                     Text("저장 버튼을\n몇 분마다 띄울까요?")
-                        .font(.system(size: 30))
                         .fontWeight(.semibold)
-                        .foregroundColor(Color.textMainColor)
+                        .modifier(TextModifier(customSize: 30))
                         .multilineTextAlignment(.center)
                     
                     HStack{
@@ -114,9 +112,8 @@ struct SettingVeiw: View {
                     showWriteModal = true
                 }, label: {
                     Text("글쓰기 시작")
-                        .font(.system(size: 24))
                         .fontWeight(.semibold)
-                        .foregroundColor(Color.white)
+                        .modifier(TextModifier(customColor: .white, customSize: 24))
                         .frame(width: 212, height: 47)
                         .background(Color.appMainColor)
                         .cornerRadius(24)

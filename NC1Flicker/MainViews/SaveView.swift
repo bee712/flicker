@@ -18,7 +18,6 @@ struct SaveView: View {
     
     var body: some View {
             VStack{
-                
                 HStack{
                     Text("닫기")
                         .font(.system(size: 18))
@@ -60,9 +59,9 @@ struct SaveView: View {
     }
 }
 
-//struct SaveView_Previews: PreviewProvider {
-//    @State private var showModal = true
-//    static var previews: some View {
-//        SaveView(savedWriting: "저장된 글",showSaveModal: $showModal)
-//    }
-//}
+struct SaveView_Previews: PreviewProvider {
+    @State static var showModal = true
+    static var previews: some View {
+        SaveView(savedWriting: "저장된 글",showSaveModal: $showModal)
+    }
+}

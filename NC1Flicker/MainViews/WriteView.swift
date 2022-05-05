@@ -61,7 +61,6 @@ struct WriteView: View {
             
             TextEditorView(writeField: self.$writeField, totalLetter: self.$totalLetter, currentSec: $currentSec)
             
-            //BottomToolBar(savedWriting: self.$savedWriting, writeField: self.$writeField, totalLetter: self.$totalLetter, time: $currentSec, limiteTime: limiteTime)
             HStack{
                 Text("\(currentSec)")
                     .onReceive(timer){ _ in
