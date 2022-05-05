@@ -12,14 +12,25 @@ struct SaveView: View {
     @State var totalLetter: Int = 0
     @State var time = 10
     @State var showAlert: Bool = false
+    @Binding var showSaveModal: Bool
     let alertInfo = ["복사", "복사 완료", "클립보드로 복사되었습니다."]
     
     
     var body: some View {
-        NavigationView{
             VStack{
                 
-                TopToolBar(savedWriting: savedWriting, isSaveViewShow: false)
+                HStack{
+                    Text("닫기")
+                        .font(.system(size: 18))
+                        .fontWeight(.medium)
+                        .foregroundColor(Color.appMainColor)
+                        .onTapGesture {
+                            showSaveModal.toggle()
+                        }
+                    Spacer()
+                }
+                .frame(width: 340)
+                .padding(.top)
                 
                 TextEditorView(writeField: self.$savedWriting, totalLetter: self.$totalLetter, currentSec: $time)
                 
@@ -27,9 +38,7 @@ struct SaveView: View {
                     Text("  ")
                         
                     Spacer()
-                    Text("공미포 \(totalLetter)자")
-                        .font(.system(size: 10))
-                        .foregroundColor(Color("textSubColor"))
+                    countNumberOfWriting(totalLetter: totalLetter)
                     Spacer()
                     Button(action: {
                         let pasteboard = UIPasteboard.general
@@ -47,14 +56,13 @@ struct SaveView: View {
                 .frame(width: 340)
                 .padding(.bottom, 10)
                 
-            }.navigationBarTitle("", displayMode: .automatic)
-                .navigationBarHidden(true)
-        }.navigationBarHidden(true)
+            }
     }
 }
 
-struct SaveView_Previews: PreviewProvider {
-    static var previews: some View {
-        SaveView(savedWriting: "저장된 글")
-    }
-}
+//struct SaveView_Previews: PreviewProvider {
+//    @State private var showModal = true
+//    static var previews: some View {
+//        SaveView(savedWriting: "저장된 글",showSaveModal: $showModal)
+//    }
+//}

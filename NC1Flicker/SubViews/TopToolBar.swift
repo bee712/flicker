@@ -9,11 +9,12 @@ import SwiftUI
 struct TopToolBar: View {
     var savedWriting : String
     var isSaveViewShow : Bool
+    @State var aaa = true
     
     var body: some View {
         HStack{
             if isSaveViewShow {
-                NavigationLink(destination: SaveView(savedWriting: savedWriting.trimmingCharacters(in: ["\n"])), label: {
+                NavigationLink(destination: SaveView(savedWriting: savedWriting.trimmingCharacters(in: ["\n"]), showSaveModal: $aaa), label: {
                     Text("저장한 글 보기")
                         .font(.system(size: 18))
                         .fontWeight(.medium)

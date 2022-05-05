@@ -12,9 +12,10 @@ var isModeOn: Bool = true
 struct SettingVeiw: View {
     
     let modeNames = ["ON", "OFF"]
-    @State var selectedMode = 0
-    @State var timeLimitMin = 0.0
-    @State var isTimeModeOn = true
+    @State private var selectedMode = 0
+    @State private var timeLimitMin = 0.0
+    @State private var isTimeModeOn = true
+    @State private var showWriteModal = false
     
     init() {
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(Color.appMainColor)
@@ -24,7 +25,6 @@ struct SettingVeiw: View {
     }
     
     var body: some View {
-        NavigationView{
             VStack{
                 Spacer()
                 VStack{
@@ -109,8 +109,10 @@ struct SettingVeiw: View {
                     
                 }
                 Spacer()
-                // limiteTime: Int(timeLimitMin*60)
-                NavigationLink(destination: WriteView(selectedMode: selectedMode, limiteTime: Int(timeLimitMin*60))){
+                
+                Button(action: {
+                    showWriteModal = true
+                }, label: {
                     Text("글쓰기 시작")
                         .font(.system(size: 24))
                         .fontWeight(.semibold)
@@ -126,14 +128,15 @@ struct SettingVeiw: View {
                                 .shadow(color: Color.buttonInnerShadow2, radius: 2, x: -3, y: -3)
                             .clipShape(RoundedRectangle(cornerRadius: 20))
                     )
-                }
+                })
                 .padding(.bottom, 30)
                 
                 
-            }.navigationBarTitle("", displayMode: .automatic)
-                .navigationBarHidden(true)
-        }
-            .navigationBarHidden(true)
+            }
+            .fullScreenCover(isPresented: $showWriteModal){
+                WriteView(selectedMode: selectedMode, limiteTime: Int(timeLimitMin*60), showSaveModal: $showWriteModal)
+            }
+
         
         
     }

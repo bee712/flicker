@@ -43,11 +43,6 @@ struct BottomToolBar: View {
                     .background(Color.appMainColor)
                     .clipShape(Circle())
             }
-//            Alert(Text("test"), isPresented: $test1, actions: {
-//                if (time==0){
-//                    test1 = true
-//                }
-//            })
             
             Spacer()
             countNumberOfWriting(totalLetter: totalLetter)
@@ -60,19 +55,12 @@ struct BottomToolBar: View {
                     timeCount = 0
                 }
             }){
-                if (limiteTime==0 || timeCount == limiteTime){
-                    Text("저장")
-                        .font(.system(size: 16))
-                        .foregroundColor(.appMainColor)
-                }else{
-                    Text("저장")
-                        .font(.system(size: 16))
-                        .foregroundColor(.textSubColor)
-                }
-                
+                Text("저장")
+                    .font(.system(size: 16))
+                    .foregroundColor(.appMainColor)
             }
         }
-        .alert("시간 초과🥲", isPresented: $showAlert, actions: {})
+        .alert("시간 초과🥲", isPresented: $showAlert, actions: {}){}
         .frame(width: 340)
         .padding(.bottom, 10)
         
