@@ -24,3 +24,30 @@ struct TextEditorView: View {
             })
     }
 }
+
+
+struct countNumberOfWriting : View {
+    
+    var totalLetter: Int
+    var body: some View {
+        Text("공미포 \(totalLetter)자")
+            .font(.system(size: 10))
+            .foregroundColor(.textSubColor)
+    }
+}
+
+
+struct ModalUpDownButton: View {
+    @Binding var showModal: Bool
+    var buttonName: String
+    
+    var body: some View {
+        Button(action: {
+            showModal.toggle()
+        }, label: {
+            Text(buttonName)
+                .modifier(TextModifier(customColor: .appMainColor, customSize: 18))
+        })
+    }
+    
+}

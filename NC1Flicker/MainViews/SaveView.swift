@@ -19,13 +19,7 @@ struct SaveView: View {
     var body: some View {
             VStack{
                 HStack{
-                    Text("닫기")
-                        .font(.system(size: 18))
-                        .fontWeight(.medium)
-                        .foregroundColor(Color.appMainColor)
-                        .onTapGesture {
-                            showSaveModal.toggle()
-                        }
+                    ModalUpDownButton(showModal: $showSaveModal, buttonName: "닫기")
                     Spacer()
                 }
                 .frame(width: 340)
@@ -35,7 +29,6 @@ struct SaveView: View {
                 
                 HStack{
                     Text("  ")
-                        
                     Spacer()
                     countNumberOfWriting(totalLetter: totalLetter)
                     Spacer()
@@ -45,12 +38,9 @@ struct SaveView: View {
                         showAlert = true
                     }){
                         Text(alertInfo[0])
-                            .font(.system(size: 16))
-                            .foregroundColor(.appMainColor)
+                            .modifier(TextModifier(customColor: .appMainColor, customSize: 16))
                     }
-                    .alert(isPresented: $showAlert){
-                        Alert(title: Text(alertInfo[1]), message: Text(alertInfo[2]))
-                    }
+                    .modifier(AddAlert(alertText: "복사 완료", isShow: $showAlert))
                 }
                 .frame(width: 340)
                 .padding(.bottom, 10)

@@ -13,7 +13,7 @@ struct SettingVeiw: View {
     
     let modeNames = ["ON", "OFF"]
     @State private var selectedMode = 0
-    @State private var timeLimitMin = 0.0
+    @State private var timeLimitSec = 0
     @State private var isTimeModeOn = true
     @State private var showWriteModal = false
     
@@ -53,7 +53,7 @@ struct SettingVeiw: View {
                 .padding(.bottom, 90)
                 
                 VStack{
-                    Text("저장 버튼을\n몇 분마다 띄울까요?")
+                    Text("저장 버튼을\n몇 초마다 활성화할까요?")
                         .fontWeight(.semibold)
                         .modifier(TextModifier(customSize: 30))
                         .multilineTextAlignment(.center)
@@ -61,7 +61,7 @@ struct SettingVeiw: View {
                     HStack{
                         // - 버튼
                         Button(action: {
-                            if(timeLimitMin>0){timeLimitMin -= 0.5}
+                            if(timeLimitSec>0){timeLimitSec -= 15}
                         }, label: {
                             Text("-")
                                 .font(.system(size: 36))
@@ -75,7 +75,7 @@ struct SettingVeiw: View {
                         // 제한 시간 표시 버튼
                         Button(action: {
                         }, label: {
-                            Text("\(String(format: "%.1f", timeLimitMin))")
+                            Text("\(timeLimitSec)")
                                 .font(.system(size: 36))
                                 .fontWeight(.semibold)
                                 .frame(width: 80, height: 80)
@@ -92,7 +92,7 @@ struct SettingVeiw: View {
                         }).padding([.leading, .trailing])
                         // + 버튼
                         Button(action: {
-                            timeLimitMin += 0.5
+                            timeLimitSec += 15
                         }, label: {
                             Text("+")
                                 .font(.system(size: 36))
@@ -131,7 +131,7 @@ struct SettingVeiw: View {
                 
             }
             .fullScreenCover(isPresented: $showWriteModal){
-                WriteView(selectedMode: selectedMode, limiteTime: Int(timeLimitMin*60), showSaveModal: $showWriteModal)
+                WriteView(selectedMode: selectedMode, limiteTime: timeLimitSec, showSaveModal: $showWriteModal)
             }
 
         

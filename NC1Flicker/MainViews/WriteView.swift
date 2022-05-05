@@ -38,23 +38,9 @@ struct WriteView: View {
     var body: some View {
         VStack{
             HStack{
-                Button(action: {
-                    showWriteModal = false
-                }, label: {
-                    Text("설정")
-                        .font(.system(size: 18))
-                        .fontWeight(.medium)
-                        .foregroundColor(Color.appMainColor)
-                })
+                ModalUpDownButton(showModal: $showWriteModal, buttonName: "설정")
                 Spacer()
-                Button(action: {
-                    showSaveModal = true
-                }, label: {
-                    Text("저장글")
-                        .font(.system(size: 18))
-                        .fontWeight(.medium)
-                        .foregroundColor(Color.appMainColor)
-                })
+                ModalUpDownButton(showModal: $showSaveModal, buttonName: "저장글")
             }
             .frame(width: 340)
             .padding(.top)
@@ -62,6 +48,7 @@ struct WriteView: View {
             TextEditorView(writeField: self.$writeField, totalLetter: self.$totalLetter, currentSec: $currentSec)
             
             HStack{
+                // 남은 시간 초를 표시해주는 텍스트
                 Text("\(currentSec)")
                     .onReceive(timer){ _ in
                         if(currentSec>0 && showSaveModal==false){
@@ -80,29 +67,34 @@ struct WriteView: View {
                             }
                         }
                     }
-                    .font(.system(size: 16))
-                    .foregroundColor(.white)
+                    .modifier(TextModifier(customColor: .white, customSize: 16))
                     .frame(width: 33, height: 33)
                     .background(Color.appMainColor)
                     .clipShape(Circle())
                 
                 Spacer()
+                
                 countNumberOfWriting(totalLetter: totalLetter)
+                
                 Spacer()
                 
-                Button(action: {
-                    if (limiteTime==0 || timeCount == limiteTime){
-                        savedWriting += "\n" + writeField
-                        writeField = ""
-                        timeCount = 0
-                    }
-                }){
+                if (limiteTime != timeCount){
                     Text("저장")
-                        .font(.system(size: 16))
-                        .foregroundColor(.appMainColor)
+                        .modifier(TextModifier(customColor: .textSubColor, customSize: 16))
+                }else{
+                    Text("저장")
+                        .modifier(TextModifier(customColor: .appMainColor, customSize: 16))
+                        .onTapGesture {
+                            if (limiteTime==0 || timeCount == limiteTime){
+                                savedWriting += "\n" + writeField
+                                writeField = ""
+                                timeCount = 0
+                            }
+                        }
                 }
+                
             }
-            .alert("시간 초과🥲", isPresented: $showAlert, actions: {}){}
+            .modifier(AddAlert(alertText: "시간 초과🥲", isShow: $showAlert))
             .frame(width: 340)
             .padding(.bottom, 10)
             
@@ -110,9 +102,6 @@ struct WriteView: View {
         .fullScreenCover(isPresented: $showSaveModal){
             SaveView(savedWriting: savedWriting.trimmingCharacters(in: ["\n"]), showSaveModal: $showSaveModal)
         }
-        
-        
-
         
     }
 }
